@@ -1,0 +1,11 @@
+Task ID,Task,Related To,Type,Due Date,Owner,Priority,Status,Notes
+T-001,Send updated pricing sheet,AL-FULL CURL ARCHERY,Email,2026-08-20,Brent Parker,High,In Progress,EXAMPLE ROW — replace or delete.
+T-002,Mail info packet,AL - ODELLS OUTDOORS ARCHERY,Other,,Brent Parker,Medium,Not Started,Requested during 8/18 call.
+T-003,Send pricing & info email to Travis,AL-BENNETT'S ARCHERY,Email,,Brent Parker,High,Not Started,Requested during 8/18 call — travis@bennettsarchery.com
+T-004,Send product info to Tom,IN-CUTTING EDGE SPORTING GOODS,Email,,Brent Parker,High,Not Started,Requested via email 8/18 — tom.cuttingedge@etczone.com
+T-005,Send catalog to Klein's Archery,NY-KLEINS ARCHERY - ARRO,Follow-up,2026-09-23,Brent Parker,Medium,Open,They currently only have a hard copy; send an updated catalog.
+T-006,Ship 6 packs regular KBS BC 150-2 + return label for serrated,MN-SCHAFFER PERFORMANCE ARCHERY - ARRO,Order Correction,2026-09-20,Brent Parker,High,Open,Shipment mix-up: sent serrated KBS BC 150-2s instead of regular ones.
+T-007,Email West Houston Archery about replacing black hornets stock,TX-WEST HOUSTON ARCHERY,Follow-up,2026-09-26,Brent Parker,High,Completed,They are down to just black hornets; likely need to reorder. Contact Adrian at wharchery@gmail.com.
+T-008,Send pricing and update to Jordan,TX-ARCHERY COUNTRY - SI #970,Email,2026-09-26,Brent Parker,Medium,Open,Jordan said they don't need product yet but will soon; send pricing now so he has it when ready.
+T-009,Place fill-in order for Wilderness Fish & Game,WI-WILDERNESS FISH &GAME,Order,2026-10-01,Brent Parker,High,Open,Fill-in order requested by Chris on 9/29.
+T-010,Email outstanding invoice to Tom (AP),WI-WILDERNESS FISH &GAME,Invoicing,2026-10-01,Brent Parker,High,Open,Last invoice payment not received. Send to tom@wildernessfishgame.com.

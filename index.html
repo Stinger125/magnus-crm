@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magnus accounts</title>
+  <style>
+    body { font: 14px/1.4 system-ui, sans-serif; margin: 24px; color: #1c1917; background: #fafaf9; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e7e5e4; vertical-align: top; }
+    th { font-size: 12px; color: #78716c; }
+    .over { color: #b91c1c; }
+    form.inline { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    input, select, button { font: inherit; padding: 8px; }
+    input[name=summary] { flex: 1; min-width: 220px; }
+  </style>
+</head>
+<body>
+  <h1>Magnus dealer CRM</h1>
+  <p>Quietest active accounts first. Direct-to-consumer is not in this list.</p>
+  <form class="inline" method="get">
+    <input name="q" value="{{ q }}" placeholder="Search account">
+    <button>Search</button>
+  </form>
+  <h2>Log a call or Wispr note</h2>
+  <form class="inline" method="post" action="/log">
+    <input name="company" required placeholder="Account name">
+    <input name="contact" placeholder="Who">
+    <select name="type"><option>Call</option><option>Email</option><option>Note</option></select>
+    <input name="summary" required placeholder="What you talked about">
+    <button>Save</button>
+  </form>
+  {% if due %}
+  <h2>Overdue callbacks</h2>
+  <table>
+    <tr><th>Due</th><th>Account</th><th>Reminder</th><th></th></tr>
+    {% for r in due %}
+    <tr>
+      <td class="over">{{ r.due }}</td>
+      <td>{{ r.company }}<br>{{ r.contact }}</td>
+      <td>{{ r.reminder }}</td>
+      <td><form method="post" action="/reminder/{{ r.id }}/done"><button>Done</button></form></td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  {% if prospects %}
+  <h2>Prospects</h2>
+  <ul>
+    {% for p in prospects %}<li><strong>{{ p.name }}</strong> — {{ p.outcome }} — {{ p.notes }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  <h2>Accounts</h2>
+  <table>
+    <tr><th>Account</th><th>Type</th><th>Last touch</th><th>Last note</th></tr>
+    {% for r in rows %}
+    <tr>
+      <td>{{ r.name }}<br>{{ r.contact }} {{ r.phone }}</td>
+      <td>{{ r.type }} {{ r.network }}</td>
+      <td>{{ r.last_on or "never" }}</td>
+      <td>{{ r.last_note }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
